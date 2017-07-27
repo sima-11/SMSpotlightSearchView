@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PersonInfoDetailView" customModule="ElasticSearchTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="348" height="265"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnt-wm-Mig">
+                    <rect key="frame" x="50" y="95" width="69" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Region: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-2F-Qvc">
+                    <rect key="frame" x="50" y="141.5" width="64.5" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firstname Surname " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9B-bG-SFc">
+                    <rect key="frame" x="60" y="35" width="228" height="30"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zua-wE-RR8">
+                    <rect key="frame" x="127" y="94" width="9" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVa-u5-Daj">
+                    <rect key="frame" x="127" y="140.5" width="9" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="q9B-bG-SFc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="1nx-Y5-hK4"/>
+                <constraint firstItem="Zua-wE-RR8" firstAttribute="centerY" secondItem="gnt-wm-Mig" secondAttribute="centerY" id="2qs-Rz-BGh"/>
+                <constraint firstItem="gnt-wm-Mig" firstAttribute="top" secondItem="q9B-bG-SFc" secondAttribute="bottom" constant="30" id="DzN-9a-WTJ"/>
+                <constraint firstItem="RVa-u5-Daj" firstAttribute="centerY" secondItem="gGf-2F-Qvc" secondAttribute="centerY" id="Ki9-Td-ZNf"/>
+                <constraint firstItem="q9B-bG-SFc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SX1-L3-uqG"/>
+                <constraint firstItem="gnt-wm-Mig" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="VE6-DC-RjR"/>
+                <constraint firstItem="RVa-u5-Daj" firstAttribute="leading" secondItem="Zua-wE-RR8" secondAttribute="leading" id="k8W-QH-62r"/>
+                <constraint firstItem="Zua-wE-RR8" firstAttribute="leading" secondItem="gnt-wm-Mig" secondAttribute="trailing" constant="8" id="pcU-lv-Hlm"/>
+                <constraint firstItem="gGf-2F-Qvc" firstAttribute="leading" secondItem="gnt-wm-Mig" secondAttribute="leading" id="q57-R0-xDQ"/>
+                <constraint firstItem="gGf-2F-Qvc" firstAttribute="top" secondItem="gnt-wm-Mig" secondAttribute="bottom" constant="25" id="wh3-3P-QuW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="genderLabel" destination="Zua-wE-RR8" id="3wI-IW-p5C"/>
+                <outlet property="nameLabel" destination="q9B-bG-SFc" id="qYK-aW-BWD"/>
+                <outlet property="regionLabel" destination="RVa-u5-Daj" id="TYI-aP-qGv"/>
+            </connections>
+            <point key="canvasLocation" x="20" y="276.5"/>
+        </view>
+    </objects>
+</document>

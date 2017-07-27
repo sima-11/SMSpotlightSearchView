@@ -1,0 +1,378 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49DC3E7F1F28C93300105068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC3E7E1F28C93300105068 /* AppDelegate.swift */; };
+		49DC3E841F28C93300105068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DC3E821F28C93300105068 /* Main.storyboard */; };
+		49DC3E861F28C93300105068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DC3E851F28C93300105068 /* Assets.xcassets */; };
+		49DC3E891F28C93300105068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DC3E871F28C93300105068 /* LaunchScreen.storyboard */; };
+		49DC3E9D1F28C97400105068 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC3E911F28C97400105068 /* ViewController.swift */; };
+		49DC3EA01F28C97400105068 /* PersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC3E951F28C97400105068 /* PersonInfo.swift */; };
+		49DC3EA21F28C97400105068 /* PersonInfoDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DC3E991F28C97400105068 /* PersonInfoDetail.xib */; };
+		49DC3EA31F28C97400105068 /* PersonInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC3E9A1F28C97400105068 /* PersonInfoDetailView.swift */; };
+		49DC3EA91F28C9CA00105068 /* SMSpotilghtSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC3EA71F28C9CA00105068 /* SMSpotilghtSearchView.swift */; };
+		49DC3EAA1F28C9CA00105068 /* SMSpotlightSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC3EA81F28C9CA00105068 /* SMSpotlightSearchBar.swift */; };
+		49DC3EAE1F28FB5100105068 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC3EAD1F28FB5100105068 /* ImageInfo.swift */; };
+		49DC3F071F2A5A9300105068 /* Just Push Play.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49DC3F061F2A5A9300105068 /* Just Push Play.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		49DC3E7B1F28C93300105068 /* SMSpotlightSearchViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSpotlightSearchViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DC3E7E1F28C93300105068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49DC3E831F28C93300105068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49DC3E851F28C93300105068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49DC3E881F28C93300105068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49DC3E8A1F28C93300105068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DC3E911F28C97400105068 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49DC3E951F28C97400105068 /* PersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonInfo.swift; sourceTree = "<group>"; };
+		49DC3E991F28C97400105068 /* PersonInfoDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonInfoDetail.xib; sourceTree = "<group>"; };
+		49DC3E9A1F28C97400105068 /* PersonInfoDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonInfoDetailView.swift; sourceTree = "<group>"; };
+		49DC3EA71F28C9CA00105068 /* SMSpotilghtSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSpotilghtSearchView.swift; sourceTree = "<group>"; };
+		49DC3EA81F28C9CA00105068 /* SMSpotlightSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSpotlightSearchBar.swift; sourceTree = "<group>"; };
+		49DC3EAD1F28FB5100105068 /* ImageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
+		49DC3F061F2A5A9300105068 /* Just Push Play.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Just Push Play.jpg"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49DC3E781F28C93300105068 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49DC3E721F28C93300105068 = {
+			isa = PBXGroup;
+			children = (
+				49DC3EA61F28C9CA00105068 /* SMSpotlightSearchView */,
+				49DC3E7D1F28C93300105068 /* SMSpotlightSearchViewDemo */,
+				49DC3E7C1F28C93300105068 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49DC3E7C1F28C93300105068 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49DC3E7B1F28C93300105068 /* SMSpotlightSearchViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49DC3E7D1F28C93300105068 /* SMSpotlightSearchViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				49DC3E7E1F28C93300105068 /* AppDelegate.swift */,
+				49DC3E901F28C97400105068 /* Controllers */,
+				49DC3E921F28C97400105068 /* Models */,
+				49DC3E981F28C97400105068 /* Views */,
+				49DC3F051F2A5A9300105068 /* Resources */,
+				49DC3E851F28C93300105068 /* Assets.xcassets */,
+				49DC3E8A1F28C93300105068 /* Info.plist */,
+			);
+			path = SMSpotlightSearchViewDemo;
+			sourceTree = "<group>";
+		};
+		49DC3E901F28C97400105068 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49DC3E911F28C97400105068 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		49DC3E921F28C97400105068 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49DC3E951F28C97400105068 /* PersonInfo.swift */,
+				49DC3EAD1F28FB5100105068 /* ImageInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		49DC3E981F28C97400105068 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49DC3E9A1F28C97400105068 /* PersonInfoDetailView.swift */,
+				49DC3E991F28C97400105068 /* PersonInfoDetail.xib */,
+				49DC3E821F28C93300105068 /* Main.storyboard */,
+				49DC3E871F28C93300105068 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		49DC3EA61F28C9CA00105068 /* SMSpotlightSearchView */ = {
+			isa = PBXGroup;
+			children = (
+				49DC3EA71F28C9CA00105068 /* SMSpotilghtSearchView.swift */,
+				49DC3EA81F28C9CA00105068 /* SMSpotlightSearchBar.swift */,
+			);
+			path = SMSpotlightSearchView;
+			sourceTree = "<group>";
+		};
+		49DC3F051F2A5A9300105068 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49DC3F061F2A5A9300105068 /* Just Push Play.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49DC3E7A1F28C93300105068 /* SMSpotlightSearchViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DC3E8D1F28C93300105068 /* Build configuration list for PBXNativeTarget "SMSpotlightSearchViewDemo" */;
+			buildPhases = (
+				49DC3E771F28C93300105068 /* Sources */,
+				49DC3E781F28C93300105068 /* Frameworks */,
+				49DC3E791F28C93300105068 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMSpotlightSearchViewDemo;
+			productName = SMSpotlightSearchViewDemo;
+			productReference = 49DC3E7B1F28C93300105068 /* SMSpotlightSearchViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49DC3E731F28C93300105068 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Si Ma";
+				TargetAttributes = {
+					49DC3E7A1F28C93300105068 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 49DC3E761F28C93300105068 /* Build configuration list for PBXProject "SMSpotlightSearchViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49DC3E721F28C93300105068;
+			productRefGroup = 49DC3E7C1F28C93300105068 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49DC3E7A1F28C93300105068 /* SMSpotlightSearchViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49DC3E791F28C93300105068 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DC3E891F28C93300105068 /* LaunchScreen.storyboard in Resources */,
+				49DC3F071F2A5A9300105068 /* Just Push Play.jpg in Resources */,
+				49DC3EA21F28C97400105068 /* PersonInfoDetail.xib in Resources */,
+				49DC3E861F28C93300105068 /* Assets.xcassets in Resources */,
+				49DC3E841F28C93300105068 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49DC3E771F28C93300105068 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DC3EAE1F28FB5100105068 /* ImageInfo.swift in Sources */,
+				49DC3E9D1F28C97400105068 /* ViewController.swift in Sources */,
+				49DC3EA31F28C97400105068 /* PersonInfoDetailView.swift in Sources */,
+				49DC3EAA1F28C9CA00105068 /* SMSpotlightSearchBar.swift in Sources */,
+				49DC3EA01F28C97400105068 /* PersonInfo.swift in Sources */,
+				49DC3E7F1F28C93300105068 /* AppDelegate.swift in Sources */,
+				49DC3EA91F28C9CA00105068 /* SMSpotilghtSearchView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49DC3E821F28C93300105068 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49DC3E831F28C93300105068 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		49DC3E871F28C93300105068 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49DC3E881F28C93300105068 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49DC3E8B1F28C93300105068 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49DC3E8C1F28C93300105068 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49DC3E8E1F28C93300105068 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SMSpotlightSearchViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sima.SMSpotlightSearchViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		49DC3E8F1F28C93300105068 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SMSpotlightSearchViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sima.SMSpotlightSearchViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49DC3E761F28C93300105068 /* Build configuration list for PBXProject "SMSpotlightSearchViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DC3E8B1F28C93300105068 /* Debug */,
+				49DC3E8C1F28C93300105068 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49DC3E8D1F28C93300105068 /* Build configuration list for PBXNativeTarget "SMSpotlightSearchViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DC3E8E1F28C93300105068 /* Debug */,
+				49DC3E8F1F28C93300105068 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49DC3E731F28C93300105068 /* Project object */;
+}
