@@ -22,20 +22,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SM-SPOTLIGHT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui8-RD-yhh">
-                                <rect key="frame" x="132.66666666666669" y="50" width="149.00000000000006" height="37"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="27"/>
-                                <color key="textColor" white="1" alpha="0.96245048415492962" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="109.66666666666669" y="50" width="195.66666666666663" height="37"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="27"/>
+                                <color key="textColor" red="0.23401068652849744" green="0.23401068652849744" blue="0.23401068652849744" alpha="0.96245048415492962" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PpZ-aY-Lgm" customClass="SMSpotlightSearchView" customModule="SMSpotlightSearchViewDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="101.66666666666666" width="374" height="49.999999999999972"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="0.96245048420000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" identifier="SearchViewHeight" id="nTQ-D5-Tjv"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.37607270077720212" green="0.057533505792795474" blue="0.077142784495513178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ui8-RD-yhh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="4bB-Su-y0A"/>
                             <constraint firstItem="PpZ-aY-Lgm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="LtP-50-QAA"/>

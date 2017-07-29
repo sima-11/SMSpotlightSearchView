@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495963401F2D109300F6DDFA /* Jackie Chan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4959633F1F2D109300F6DDFA /* Jackie Chan.jpg */; };
 		49DC3E7F1F28C93300105068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC3E7E1F28C93300105068 /* AppDelegate.swift */; };
 		49DC3E841F28C93300105068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DC3E821F28C93300105068 /* Main.storyboard */; };
 		49DC3E861F28C93300105068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DC3E851F28C93300105068 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4959633F1F2D109300F6DDFA /* Jackie Chan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jackie Chan.jpg"; sourceTree = "<group>"; };
 		49DC3E7B1F28C93300105068 /* SMSpotlightSearchViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSpotlightSearchViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DC3E7E1F28C93300105068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DC3E831F28C93300105068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				49DC3F061F2A5A9300105068 /* Just Push Play.jpg */,
+				4959633F1F2D109300F6DDFA /* Jackie Chan.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				49DC3E891F28C93300105068 /* LaunchScreen.storyboard in Resources */,
 				49DC3F071F2A5A9300105068 /* Just Push Play.jpg in Resources */,
 				49DC3EA21F28C97400105068 /* PersonInfoDetail.xib in Resources */,
+				495963401F2D109300F6DDFA /* Jackie Chan.jpg in Resources */,
 				49DC3E861F28C93300105068 /* Assets.xcassets in Resources */,
 				49DC3E841F28C93300105068 /* Main.storyboard in Resources */,
 			);
@@ -371,6 +375,7 @@
 				49DC3E8F1F28C93300105068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

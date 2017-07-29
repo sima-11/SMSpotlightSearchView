@@ -102,6 +102,7 @@ public class SMSpotlightSearchBar: UIView {
         self.textField.borderStyle = .none
         self.textField.backgroundColor = UIColor.clear
         self.textField.tintColor = UIColor.darkGray
+        self.textField.autocorrectionType = .no
         self.textField.textColor = self.textColour
         self.textField.font = self.font
         self.textField.delegate = self

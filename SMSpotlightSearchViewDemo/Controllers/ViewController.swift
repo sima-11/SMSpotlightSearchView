@@ -106,21 +106,21 @@ class ViewController: UIViewController {
         else {
             return
         }
-        
     }
     
-    
     func buildMockInfo() -> [Any] {
-        let person1 = PersonInfo(name: "Joe", surname: "Daniels", gender: .Male, region: "Tennessee")
+        let person1 = PersonInfo(name: "Jack", surname: "Depp", gender: .Male, region: "Owensboro")
         let person2 = PersonInfo(name: "Jack", surname: "DiCaprio", gender: .Male, region: "Los Angeles")
-        let person3 = PersonInfo(name: "Jack", surname: "Depp", gender: .Male, region: "Owensboro")
-        let image1 = ImageInfo(name: "Just Push Play", format: "jpg")
+        let person3 = PersonInfo(name: "Joe", surname: "Daniels", gender: .Male, region: "Tennessee")
+        let image1 = ImageInfo(name: "Jackie Chan", format: "jpg")
+        let image2 = ImageInfo(name: "Just Push Play", format: "jpg")
         
         var info = [Any]()
         info.append(person1)
         info.append(person2)
         info.append(person3)
         info.append(image1)
+        info.append(image2)
         
         return info
     }
@@ -132,12 +132,12 @@ class ViewController: UIViewController {
         let allInfo = self.buildMockInfo()
         for info in allInfo {
             if let personInfo = info as? PersonInfo {
-                if (personInfo.name + " " + personInfo.surname).hasPrefix(t) {
+                if (personInfo.name + " " + personInfo.surname).lowercased().hasPrefix(t.lowercased()) {
                     self.result.append(info)
                 }
             }
             else if let imageInfo = info as? ImageInfo {
-                if (imageInfo.name + "." + imageInfo.format).hasPrefix(t) {
+                if (imageInfo.name + "." + imageInfo.format).lowercased().hasPrefix(t.lowercased()) {
                     self.result.append(info)
                 }
             }
@@ -183,6 +183,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: Update search result style based on horizontal size class
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         self.searchView.adjustSearchResultUIWithHorizontalSizeClass(horizontalSizeClass: self.traitCollection.horizontalSizeClass)
     }
