@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PersonInfoDetailView" customModule="ElasticSearchTest" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PersonInfoDetailView" customModule="SMSpotlightSearchViewDemo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="348" height="265"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -22,7 +22,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Region: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-2F-Qvc">
-                    <rect key="frame" x="50" y="141.5" width="64.5" height="21.5"/>
+                    <rect key="frame" x="50" y="131.5" width="64.5" height="21.5"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVa-u5-Daj">
-                    <rect key="frame" x="127" y="140.5" width="9" height="24"/>
+                    <rect key="frame" x="127" y="130.5" width="9" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -57,7 +57,7 @@
                 <constraint firstItem="RVa-u5-Daj" firstAttribute="leading" secondItem="Zua-wE-RR8" secondAttribute="leading" id="k8W-QH-62r"/>
                 <constraint firstItem="Zua-wE-RR8" firstAttribute="leading" secondItem="gnt-wm-Mig" secondAttribute="trailing" constant="8" id="pcU-lv-Hlm"/>
                 <constraint firstItem="gGf-2F-Qvc" firstAttribute="leading" secondItem="gnt-wm-Mig" secondAttribute="leading" id="q57-R0-xDQ"/>
-                <constraint firstItem="gGf-2F-Qvc" firstAttribute="top" secondItem="gnt-wm-Mig" secondAttribute="bottom" constant="25" id="wh3-3P-QuW"/>
+                <constraint firstItem="gGf-2F-Qvc" firstAttribute="top" secondItem="gnt-wm-Mig" secondAttribute="bottom" constant="15" id="wh3-3P-QuW"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

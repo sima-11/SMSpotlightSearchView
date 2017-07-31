@@ -4,15 +4,18 @@
 //
 //  Created by Si Ma on 7/19/17.
 //
+
 /* ==========================================================================================
-    This view controller shows some snippets of how to use SMSpotlightSearchView
- 
-    UITableViewDatasource & UITableViewDelegate must be implement to present the result list
-    
- 
-    ************************** IMPORTANT **************************
-    Updating the "Height Constraint" is CRITICAL
-    Otherwise the search view won't expand to show the result
+ *  This view controller shows some snippets of how to use SMSpotlightSearchView
+ *  E.g. Assign delegates, set search result detail view, etc.
+ *
+ *  UITableViewDatasource & UITableViewDelegate must be implement 
+ *  in order to present the result list
+ *
+ *
+ * ************************** IMPORTANT **************************
+ *  Updating the "Height Constraint" is CRITICAL
+ *  Otherwise the search view won't expand to show the result
  */
 
 import UIKit
@@ -29,12 +32,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Styling
+        /*
+         *** Uncomment this block to programmatically styling ***
+         
         self.searchView.backgroundColor = UIColor(white: 0.95, alpha: 0.85)
         self.searchView.layer.masksToBounds = true
         self.searchView.layer.borderColor = UIColor.gray.cgColor
         self.searchView.layer.borderWidth = 0.5
         self.searchView.layer.cornerRadius = 10.0
+        */
+        
         self.searchView.resultListTableView.backgroundColor = UIColor.clear
         self.searchView.resultListTableView.separatorStyle = .none
         self.initialiseDetailViews()
@@ -175,7 +182,6 @@ class ViewController: UIViewController {
                     self.searchView.resultListTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .top)
                     self.showResultDetail(detail: self.result[0])
                 }
-                
             }
             else {
                 self.searchView.updateSearchViewHeightWithConstraint(heightConstraint: constraint, expandingValue: 0.0, animated: true)
@@ -183,9 +189,12 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK: Update search result style based on horizontal size class
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.searchView.adjustSearchResultUIWithHorizontalSizeClass(horizontalSizeClass: self.traitCollection.horizontalSizeClass)
+        self.searchView.traitCollectionDidChange(previousTraitCollection)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
     }
 }
 

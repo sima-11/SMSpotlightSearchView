@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		495963401F2D109300F6DDFA /* Jackie Chan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4959633F1F2D109300F6DDFA /* Jackie Chan.jpg */; };
+		495EFFD81F2FD886000BE51C /* InspectableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EFFD71F2FD886000BE51C /* InspectableView.swift */; };
 		49DC3E7F1F28C93300105068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC3E7E1F28C93300105068 /* AppDelegate.swift */; };
 		49DC3E841F28C93300105068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DC3E821F28C93300105068 /* Main.storyboard */; };
 		49DC3E861F28C93300105068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DC3E851F28C93300105068 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		4959633F1F2D109300F6DDFA /* Jackie Chan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jackie Chan.jpg"; sourceTree = "<group>"; };
+		495EFFD71F2FD886000BE51C /* InspectableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectableView.swift; sourceTree = "<group>"; };
 		49DC3E7B1F28C93300105068 /* SMSpotlightSearchViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSpotlightSearchViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DC3E7E1F28C93300105068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DC3E831F28C93300105068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				49DC3EA71F28C9CA00105068 /* SMSpotilghtSearchView.swift */,
 				49DC3EA81F28C9CA00105068 /* SMSpotlightSearchBar.swift */,
+				495EFFD71F2FD886000BE51C /* InspectableView.swift */,
 			);
 			path = SMSpotlightSearchView;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				49DC3E9D1F28C97400105068 /* ViewController.swift in Sources */,
 				49DC3EA31F28C97400105068 /* PersonInfoDetailView.swift in Sources */,
 				49DC3EAA1F28C9CA00105068 /* SMSpotlightSearchBar.swift in Sources */,
+				495EFFD81F2FD886000BE51C /* InspectableView.swift in Sources */,
 				49DC3EA01F28C97400105068 /* PersonInfo.swift in Sources */,
 				49DC3E7F1F28C93300105068 /* AppDelegate.swift in Sources */,
 				49DC3EA91F28C9CA00105068 /* SMSpotilghtSearchView.swift in Sources */,

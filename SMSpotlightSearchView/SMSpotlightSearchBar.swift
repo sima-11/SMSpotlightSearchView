@@ -22,34 +22,52 @@ public typealias SMSpotlightSearchBarDidEndEditingReason = UITextFieldDidEndEdit
     @objc optional func searchBarDidEndEditing(_ searchBar: SMSpotlightSearchBar, reason: SMSpotlightSearchBarDidEndEditingReason)
 }
 
-public class SMSpotlightSearchBar: UIView {
+@IBDesignable public class SMSpotlightSearchBar: InspectableView {
     
-    var font: UIFont = UIFont.systemFont(ofSize: 20.0) {
-        didSet {
-            self.textField.font = self.font
+    var font: UIFont? {
+        get {
+            return self.textField.font
+        }
+        set {
+            self.textField.font = newValue
         }
     }
-    var textColour: UIColor = UIColor.black {
-        didSet {
-            self.textField.textColor = self.textColour
+    @IBInspectable var searchIconColour: UIColor {
+        get {
+            return self.searchIconView.colour
+        }
+        set {
+            self.searchIconView.colour = newValue
         }
     }
-    var text: String? {
+    @IBInspectable var textColour: UIColor? {
+        get {
+            return self.textField.textColor
+        }
+        set {
+            self.textField.textColor = newValue
+        }
+    }
+    @IBInspectable var text: String? {
         get {
             return self.textField.text
         }
         set {
-            self.textField.text = self.text
+            self.textField.text = newValue
         }
     }
     
-    weak var delegate: SMSpotlightSearchBarDelegate?
+    @IBOutlet weak var delegate: SMSpotlightSearchBarDelegate?
     
     
     // UI properties
     private var searchIconView: SearchIconView!
     private var textField: UITextField!
     
+    
+    deinit {
+        self.delegate = nil
+    }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -77,17 +95,19 @@ public class SMSpotlightSearchBar: UIView {
     }
     
     private func setupUIElements() {
-        self.setupSearchBar()
-        self.setupTextField()
+        self.addSearchIcon()
+        self.layoutSearchIcon()
+        self.addTextfield()
+        self.layoutTextField()
     }
     
-    private func setupSearchBar() {
-        // Add search icon
+    private func addSearchIcon() {
         self.searchIconView = SearchIconView(frame: CGRect(x: 0.0, y: 0.0, width: self.frame.size.height, height: self.frame.size.height))
         self.searchIconView.backgroundColor = UIColor.clear
         self.addSubview(self.searchIconView)
-        
-        // Add constraints
+    }
+    
+    private func layoutSearchIcon() {
         self.searchIconView.translatesAutoresizingMaskIntoConstraints = false
         let topConstraint = NSLayoutConstraint(item: self.searchIconView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.searchIconView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
@@ -96,8 +116,7 @@ public class SMSpotlightSearchBar: UIView {
         NSLayoutConstraint.activate([topConstraint, bottomConstraint, leadingConstraint, widthConstraint])
     }
     
-    private func setupTextField() {
-        // Add textfield
+    private func addTextfield() {
         self.textField = UITextField(frame: CGRect(x: self.searchIconView.frame.origin.x + self.searchIconView.frame.size.width, y: 0.0, width: self.frame.size.width - self.frame.size.height * 2, height: self.frame.size.height))
         self.textField.borderStyle = .none
         self.textField.backgroundColor = UIColor.clear
@@ -108,16 +127,17 @@ public class SMSpotlightSearchBar: UIView {
         self.textField.delegate = self
         self.addSubview(self.textField)
         
-        // Add constraints
+        // Listen to text change
+        self.textField.addTarget(self, action: #selector(SMSpotlightSearchBar.textFieldDidChangeText(_:)), for: .editingChanged)
+    }
+    
+    private func layoutTextField() {
         self.textField.translatesAutoresizingMaskIntoConstraints = false
         let topConstraint = NSLayoutConstraint(item: self.textField, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.textField, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
         let leadingConstraint = NSLayoutConstraint(item: self.textField, attribute: .left, relatedBy: .equal, toItem: self.searchIconView, attribute: .right, multiplier: 1.0, constant: 0.0)
         let trailingConstraint = NSLayoutConstraint(item: self.textField, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0)
         NSLayoutConstraint.activate([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
-        
-        // Listen to text change
-        self.textField.addTarget(self, action: #selector(SMSpotlightSearchBar.textFieldDidChangeText(_:)), for: .editingChanged)
     }
     
     // Private class to draw search icon

@@ -7,22 +7,21 @@
 
 import UIKit
 
-public class SMSpotlightSearchView: UIView {
+@IBDesignable public class SMSpotlightSearchView: InspectableView {
     
-    var dividerColour: UIColor = UIColor.lightGray {
+    @IBInspectable var dividerColour: UIColor = UIColor.lightGray {
         didSet{
             self.setNeedsDisplay()
         }
     }
-    var heightConstraintIdentifier = ""
     
     private(set) var searchBar: SMSpotlightSearchBar!
     private(set) var resultListTableView: UITableView!
     private(set) var resultDetailContainerView: UIView!
     private var searchResultContainer: UIView!
     
-    private var resultListFullWidthConstraint: NSLayoutConstraint!
-    private var resultList40PercentWidthConstraint: NSLayoutConstraint!
+    fileprivate var resultListFullWidthConstraint: NSLayoutConstraint!
+    fileprivate var resultList40PercentWidthConstraint: NSLayoutConstraint!
     
     private let horizontalDividerWidth: CGFloat = 0.5
     private let verticalDividerWidth: CGFloat = 0.5
@@ -52,26 +51,25 @@ public class SMSpotlightSearchView: UIView {
     private func setupUIElements() {
         self.searchBar = SMSpotlightSearchBar(frame: CGRect.zero, font: nil, textColour: nil)
         self.addSubview(self.searchBar)
-        self.addSearchBarConstraints()
+        self.applyConstraintsOnSearchBar()
         
         self.searchResultContainer = UIView(frame: CGRect.zero)
         self.searchResultContainer.backgroundColor = UIColor.clear
         self.addSubview(self.searchResultContainer)
-        self.addSearchResultContainerViewConstraints()
+        self.applyConstraintsOnSearchResultContainerView()
         
         self.resultListTableView = UITableView(frame: CGRect.zero, style: .plain)
         self.resultListTableView.separatorStyle = .none
         self.searchResultContainer.addSubview(self.resultListTableView)
-        self.addResultListTableViewConstraints()
+        self.applyConstraintsOnResultListTableView()
         
         self.resultDetailContainerView = UIView(frame: CGRect.zero)
         self.resultDetailContainerView.backgroundColor = UIColor.clear
         self.searchResultContainer.addSubview(self.resultDetailContainerView)
-        self.addResultDetailContainerViewConstraints()
+        self.applyConstraintsOnResultDetailContainerView()
     }
     
-    private func addSearchBarConstraints() {
-        
+    private func applyConstraintsOnSearchBar() {
         let topConstraint = NSLayoutConstraint(item: self.searchBar, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
         let leadingConstraint = NSLayoutConstraint(item: self.searchBar, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
         let trailingConstraint = NSLayoutConstraint(item: self.searchBar, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0.0)
@@ -81,8 +79,7 @@ public class SMSpotlightSearchView: UIView {
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint, heightConstraint])
     }
     
-    private func addSearchResultContainerViewConstraints() {
-        
+    private func applyConstraintsOnSearchResultContainerView() {
         let topConstraint = NSLayoutConstraint(item: self.searchResultContainer, attribute: .top, relatedBy: .equal, toItem: self.searchBar, attribute: .bottom, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.searchResultContainer, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
         let leadingConstraint = NSLayoutConstraint(item: self.searchResultContainer, attribute: .leading, relatedBy: .equal, toItem: self.searchBar, attribute: .leading, multiplier: 1.0, constant: 0.0)
@@ -92,21 +89,19 @@ public class SMSpotlightSearchView: UIView {
         NSLayoutConstraint.activate([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
     }
     
-    private func addResultListTableViewConstraints() {
-        
+    private func applyConstraintsOnResultListTableView() {
         let topConstraint = NSLayoutConstraint(item: self.resultListTableView, attribute: .top, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .top, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.resultListTableView, attribute: .bottom, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .bottom, multiplier: 1.0, constant: 0.0)
         let leadingConstraint = NSLayoutConstraint(item: self.resultListTableView, attribute: .leading, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .leading, multiplier: 1.0, constant: 0.0)
         
-        self.resultListFullWidthConstraint = NSLayoutConstraint(item: self.resultListTableView, attribute: .width, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .width, multiplier: 1.0, constant: -self.verticalDividerWidth)
-        self.resultList40PercentWidthConstraint = NSLayoutConstraint(item: self.resultListTableView, attribute: .width, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .width, multiplier: 0.4, constant: 0.0)
+        self.resultListFullWidthConstraint = NSLayoutConstraint(item: self.resultListTableView, attribute: .width, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .width, multiplier: 1.0, constant: 0.0)
+        self.resultList40PercentWidthConstraint = NSLayoutConstraint(item: self.resultListTableView, attribute: .width, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .width, multiplier: 0.4, constant: -self.verticalDividerWidth)
         
         self.resultListTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([topConstraint, bottomConstraint, leadingConstraint])
     }
     
-    private func addResultDetailContainerViewConstraints() {
-        
+    private func applyConstraintsOnResultDetailContainerView() {
         let topConstraint = NSLayoutConstraint(item: self.resultDetailContainerView, attribute: .top, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .top, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.resultDetailContainerView, attribute: .bottom, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .bottom, multiplier: 1.0, constant: 0.0)
         let leadingConstraint = NSLayoutConstraint(item: self.resultDetailContainerView, attribute: .leading, relatedBy: .equal, toItem: self.resultListTableView, attribute: .trailing, multiplier: 1.0, constant: 0.0)
@@ -116,24 +111,28 @@ public class SMSpotlightSearchView: UIView {
         NSLayoutConstraint.activate([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
     }
     
-    func adjustSearchResultUIWithHorizontalSizeClass(horizontalSizeClass: UIUserInterfaceSizeClass) {
-        
+    // MARK: Update search result style based on horizontal size class
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if self.traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass {
+            self.adjustSearchResultUIWithHorizontalSizeClass(horizontalSizeClass: self.traitCollection.horizontalSizeClass)
+        }
+    }
+    
+    private func adjustSearchResultUIWithHorizontalSizeClass(horizontalSizeClass: UIUserInterfaceSizeClass) {
         DispatchQueue.main.async {
             if self.traitCollection.horizontalSizeClass == .compact {
                 self.resultDetailContainerView.isHidden = true
                 self.resultList40PercentWidthConstraint.isActive = false
                 self.resultListFullWidthConstraint.isActive = true
-                self.layoutSubviews()
             }
             else {
                 self.resultDetailContainerView.isHidden = false
                 self.resultListFullWidthConstraint.isActive = false
                 self.resultList40PercentWidthConstraint.isActive = true
-                self.layoutSubviews()
             }
+            self.layoutSubviews()
         }
-        
-        
     }
     
     func updateSearchViewHeightWithConstraint(heightConstraint: NSLayoutConstraint, expandingValue: CGFloat, animated: Bool) {
@@ -187,9 +186,14 @@ public class SMSpotlightSearchView: UIView {
         context.addLine(to: horizontalDividerEndPoint)
         context.strokePath()
         
-        guard self.resultListTableView.frame.size.width < self.searchResultContainer.frame.size.width else {return}
         
-        let verticalDividerStartPoint = CGPoint(x: self.resultListTableView.frame.origin.x + self.resultListTableView.frame.size.width + verticalDividerWidth/2, y: self.searchBar.frame.size.height + self.horizontalDividerWidth/2)
+        // Only draw the vertical divider in .regular mode
+        guard self.traitCollection.horizontalSizeClass == .regular else {
+            context.restoreGState()
+            return
+        }
+        
+        let verticalDividerStartPoint = CGPoint(x: self.searchResultContainer.frame.size.width * self.resultList40PercentWidthConstraint.multiplier + verticalDividerWidth/2, y: self.searchBar.frame.size.height + self.horizontalDividerWidth/2)
         let verticalDividerEndPoint = CGPoint(x: verticalDividerStartPoint.x, y: self.frame.size.height)
         
         context.setLineWidth(self.verticalDividerWidth)
@@ -198,5 +202,24 @@ public class SMSpotlightSearchView: UIView {
         context.strokePath()
         
         context.restoreGState()
+    }
+}
+
+/* Explanation for this extension:
+ *
+ * IB can't read the value of self.traitCollection yet, so you won't be able to 
+ * see the correct layout without manually activate/deactivate the two constraints which
+ * manage the tableView's width from prepareForInterfaceBuilder()
+ *
+ * prepareForInterfaceBuilder() won't be called during runtime
+ */
+extension SMSpotlightSearchView {
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        self.resultListTableView.backgroundColor = UIColor.clear
+        
+        self.resultListFullWidthConstraint.isActive = false
+        self.resultList40PercentWidthConstraint.isActive = true
     }
 }
