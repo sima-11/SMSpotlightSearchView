@@ -1,15 +1,13 @@
-//
-//  InspectableView.swift
-//  SMSpotlightSearchViewDemo
-//
-//  Created by Si Ma on 7/31/17.
-//  Copyright © 2017 Si Ma. All rights reserved.
-//
 /*
+ *  InspectableView.swift
+ *
+ *  Created by Si Ma on 7/31/17.
+ *  Copyright © 2017 Si Ma. All rights reserved.
+ *
  *  Description:
  *
  *  This UIView subclass replicate some frequently used CALayer properties
- *  and exposes them to IB
+ *  and make them visible in IB
  */
 
 import UIKit

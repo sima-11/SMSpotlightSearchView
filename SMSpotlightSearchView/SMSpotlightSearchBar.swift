@@ -1,11 +1,10 @@
-//
-//  SpotlightSearchBar.swift
-//  SMSpotlightSearchBar
-//
-//  Created by Si Ma on 7/20/17.
-//
-
-/*  Description:
+/*
+ *  SpotlightSearchBar.swift
+ *
+ *  Created by Si Ma on 7/20/17.
+ *  Copyright © 2017 Si Ma. All rights reserved.
+ *
+ *  Description:
  *
  *  This InspectableView subclass constains a synamically drawn search icon to mark the type of the input
  *  and a text field for input.

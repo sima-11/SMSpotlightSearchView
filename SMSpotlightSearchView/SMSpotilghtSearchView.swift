@@ -1,11 +1,10 @@
-//
-//  SpotilghtSearchPanel.swift
-//  SMSpotlightSearchView
-//
-//  Created by Si Ma on 7/22/17.
-//
-
-/*  Description:
+/*
+ *  SMSpotlightSearchView.swift
+ *
+ *  Created by Si Ma on 7/22/17.
+ *  Copyright © 2017 Si Ma. All rights reserved.
+ *
+ *  Description:
  *
  *  This InspectableView subclass constains a search bar, a table view (for result list),
  *  a result detail container (to give additional info of a result).
