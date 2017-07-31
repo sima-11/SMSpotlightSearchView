@@ -5,7 +5,8 @@
 //  Created by Si Ma on 7/19/17.
 //
 
-/* ==========================================================================================
+/*  Description:
+ *
  *  This view controller shows some snippets of how to use SMSpotlightSearchView
  *  E.g. Assign delegates, set search result detail view, etc.
  *

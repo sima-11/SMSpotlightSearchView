@@ -5,6 +5,15 @@
 //  Created by Si Ma on 7/20/17.
 //
 
+/*  Description:
+ *
+ *  This InspectableView subclass constains a synamically drawn search icon to mark the type of the input
+ *  and a text field for input.
+ *  Most of the styling properties are editable in IB.
+ *
+ *  SMSpotlightSearchBarDelegate is basically a wrapper of UITextFieldDelegate.
+ */
+
 import UIKit
 
 public typealias SMSpotlightSearchBarDidEndEditingReason = UITextFieldDidEndEditingReason

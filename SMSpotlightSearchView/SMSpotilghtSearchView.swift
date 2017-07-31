@@ -5,6 +5,17 @@
 //  Created by Si Ma on 7/22/17.
 //
 
+/*  Description:
+ *
+ *  This InspectableView subclass constains a search bar, a table view (for result list),
+ *  a result detail container (to give additional info of a result).
+ *
+ *  Most of the styling properties of the view itself are editable in IB.
+ *
+ *  SMSpotlightSearchBarDelegate, UITableViewDatasource & UITableViewDelegate are not implemented here,
+ *  but should be implemented in a view controller
+ */
+
 import UIKit
 
 @IBDesignable public class SMSpotlightSearchView: InspectableView {
@@ -14,15 +25,28 @@ import UIKit
             self.setNeedsDisplay()
         }
     }
+    @IBInspectable var searchBarHeightConstraintConstant: CGFloat {
+        get {
+            return self.searchBarHeightConstraint.constant
+        }
+        set {
+            self.searchBarHeightConstraint.constant = newValue
+            self.layoutSubviews()
+        }
+    }
     
+    // UI Elements
     private(set) var searchBar: SMSpotlightSearchBar!
     private(set) var resultListTableView: UITableView!
     private(set) var resultDetailContainerView: UIView!
     private var searchResultContainer: UIView!
     
+    // Constaints
     fileprivate var resultListFullWidthConstraint: NSLayoutConstraint!
     fileprivate var resultList40PercentWidthConstraint: NSLayoutConstraint!
+    private var searchBarHeightConstraint: NSLayoutConstraint!
     
+    // Result container dividers widths
     private let horizontalDividerWidth: CGFloat = 0.5
     private let verticalDividerWidth: CGFloat = 0.5
     
@@ -73,10 +97,10 @@ import UIKit
         let topConstraint = NSLayoutConstraint(item: self.searchBar, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
         let leadingConstraint = NSLayoutConstraint(item: self.searchBar, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
         let trailingConstraint = NSLayoutConstraint(item: self.searchBar, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0.0)
-        let heightConstraint = NSLayoutConstraint(item: self.searchBar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50.0)
+        self.searchBarHeightConstraint = NSLayoutConstraint(item: self.searchBar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50.0)
         
         self.searchBar.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint, heightConstraint])
+        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint, self.searchBarHeightConstraint])
     }
     
     private func applyConstraintsOnSearchResultContainerView() {

@@ -6,10 +6,10 @@
 //  Copyright © 2017 Si Ma. All rights reserved.
 //
 /*
- * Description:
+ *  Description:
  *
- * A UIView subclass which makes some frequently used CALayer properties
- * exposing to Interface Builder
+ *  This UIView subclass replicate some frequently used CALayer properties
+ *  and exposes them to IB
  */
 
 import UIKit
