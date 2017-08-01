@@ -64,13 +64,30 @@ public typealias SMSpotlightSearchBarDidEndEditingReason = UITextFieldDidEndEdit
             self.textField.text = newValue
         }
     }
+    @IBInspectable var resultTypeImage: UIImage? {
+        get {
+            return self.resultTypeImageView.image
+        }
+        set {
+            self.resultTypeImageView.image = newValue
+        }
+    }
+    @IBInspectable var margin: CGFloat {
+        get {
+            return self.layoutMargins.left
+        }
+        set {
+            self.layoutMargins = UIEdgeInsets(top: newValue, left: newValue, bottom: newValue, right: newValue)
+        }
+    }
     
     @IBOutlet weak var delegate: SMSpotlightSearchBarDelegate?
     
     
-    // UI properties
+    // UI elements
     private var searchIconView: SearchIconView!
     private var textField: UITextField!
+    private var resultTypeImageView: UIImageView!
     
     
     deinit {
@@ -103,29 +120,48 @@ public typealias SMSpotlightSearchBarDidEndEditingReason = UITextFieldDidEndEdit
     }
     
     private func setupUIElements() {
-        self.addSearchIcon()
-        self.layoutSearchIcon()
+        self.addSearchIconView()
+        self.applyConstraintsOnSearchIconView()
+        self.addResultTypeImageView()
+        self.applyConstraintsOnResultTypeImageView()
         self.addTextfield()
-        self.layoutTextField()
+        self.applyConstraintsOnTextField()
     }
     
-    private func addSearchIcon() {
-        self.searchIconView = SearchIconView(frame: CGRect(x: 0.0, y: 0.0, width: self.frame.size.height, height: self.frame.size.height))
+    private func addSearchIconView() {
+        self.searchIconView = SearchIconView(frame: .zero)
         self.searchIconView.backgroundColor = UIColor.clear
         self.addSubview(self.searchIconView)
     }
     
-    private func layoutSearchIcon() {
+    private func applyConstraintsOnSearchIconView() {
         self.searchIconView.translatesAutoresizingMaskIntoConstraints = false
         let topConstraint = NSLayoutConstraint(item: self.searchIconView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.searchIconView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
         let leadingConstraint = NSLayoutConstraint(item: self.searchIconView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
-        let widthConstraint = NSLayoutConstraint(item: self.searchIconView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1.0, constant: 0.0)
+        let widthConstraint = NSLayoutConstraint(item: self.searchIconView, attribute: .width, relatedBy: .equal, toItem: self.searchIconView, attribute: .height, multiplier: 1.0, constant: 0.0)
         NSLayoutConstraint.activate([topConstraint, bottomConstraint, leadingConstraint, widthConstraint])
     }
     
+    private func addResultTypeImageView() {
+        self.resultTypeImageView = UIImageView(frame: .zero)
+        self.resultTypeImageView.contentMode = .scaleAspectFit
+        self.addSubview(self.resultTypeImageView)
+    }
+    
+    private func applyConstraintsOnResultTypeImageView() {
+        self.resultTypeImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let topConstraint = NSLayoutConstraint(item: self.resultTypeImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .topMargin, multiplier: 1.0, constant: 0.0)
+        let bottomConstraint = NSLayoutConstraint(item: self.resultTypeImageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottomMargin, multiplier: 1.0, constant: 0.0)
+        let trailingConstraint = NSLayoutConstraint(item: self.resultTypeImageView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailingMargin, multiplier: 1.0, constant: 0.0)
+        let widthConstraint = NSLayoutConstraint(item: self.resultTypeImageView, attribute: .width, relatedBy: .equal, toItem: self.resultTypeImageView, attribute: .height, multiplier: 1.0, constant: 0.0)
+        
+        NSLayoutConstraint.activate([topConstraint, bottomConstraint, widthConstraint, trailingConstraint])
+    }
+    
     private func addTextfield() {
-        self.textField = UITextField(frame: CGRect(x: self.searchIconView.frame.origin.x + self.searchIconView.frame.size.width, y: 0.0, width: self.frame.size.width - self.frame.size.height * 2, height: self.frame.size.height))
+        self.textField = UITextField(frame: .zero)
         self.textField.borderStyle = .none
         self.textField.backgroundColor = UIColor.clear
         self.textField.tintColor = UIColor.darkGray
@@ -139,7 +175,7 @@ public typealias SMSpotlightSearchBarDidEndEditingReason = UITextFieldDidEndEdit
         self.textField.addTarget(self, action: #selector(SMSpotlightSearchBar.textFieldDidChangeText(_:)), for: .editingChanged)
     }
     
-    private func layoutTextField() {
+    private func applyConstraintsOnTextField() {
         self.textField.translatesAutoresizingMaskIntoConstraints = false
         let topConstraint = NSLayoutConstraint(item: self.textField, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.textField, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)

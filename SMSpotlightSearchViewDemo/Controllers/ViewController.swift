@@ -99,6 +99,7 @@ class ViewController: UIViewController {
             self.addSubviewToDetailContainerView(subview: self.personInfoDetailView)
             
             DispatchQueue.main.async {
+                self.searchView.searchBar.resultTypeImage = UIImage(named: "contactsIcon")
                 self.personInfoDetailView.nameLabel.text = "\(personInfo.name) \(personInfo.surname)"
                 self.personInfoDetailView.genderLabel.text = personInfo.gender == .Male ? "Male" : "Female"
                 self.personInfoDetailView.regionLabel.text = personInfo.region
@@ -108,10 +109,12 @@ class ViewController: UIViewController {
             self.addSubviewToDetailContainerView(subview: self.imageView)
             
             DispatchQueue.main.async {
+                self.searchView.searchBar.resultTypeImage = UIImage(named: "imageIcon")
                 self.imageView.image = UIImage(named: "\(imageInfo.name).\(imageInfo.format)")
             }
         }
         else {
+            self.searchView.searchBar.resultTypeImage = nil
             return
         }
     }
