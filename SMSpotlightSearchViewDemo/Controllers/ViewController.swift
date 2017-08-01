@@ -189,6 +189,9 @@ class ViewController: UIViewController {
             }
             else {
                 self.searchView.updateSearchViewHeightWithConstraint(heightConstraint: constraint, expandingValue: 0.0, animated: true)
+                DispatchQueue.main.async {
+                    self.searchView.searchBar.resultTypeImage = nil
+                }
             }
         }
     }

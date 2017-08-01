@@ -19,6 +19,14 @@ import UIKit
 
 @IBDesignable public class SMSpotlightSearchView: InspectableView {
     
+    @IBInspectable var searchIconColour: UIColor {
+        get {
+            return self.searchBar.searchIconColour
+        }
+        set {
+            self.searchBar.searchIconColour = newValue
+        }
+    }
     @IBInspectable var dividerColour: UIColor = UIColor.lightGray {
         didSet{
             self.setNeedsDisplay()
@@ -43,6 +51,7 @@ import UIKit
     // Constaints
     fileprivate var resultListFullWidthConstraint: NSLayoutConstraint!
     fileprivate var resultList40PercentWidthConstraint: NSLayoutConstraint!
+    fileprivate var resultDetailContainerLeadingConstraint: NSLayoutConstraint!
     private var searchBarHeightConstraint: NSLayoutConstraint!
     
     // Result container dividers widths
@@ -127,11 +136,12 @@ import UIKit
     private func applyConstraintsOnResultDetailContainerView() {
         let topConstraint = NSLayoutConstraint(item: self.resultDetailContainerView, attribute: .top, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .top, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.resultDetailContainerView, attribute: .bottom, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .bottom, multiplier: 1.0, constant: 0.0)
-        let leadingConstraint = NSLayoutConstraint(item: self.resultDetailContainerView, attribute: .leading, relatedBy: .equal, toItem: self.resultListTableView, attribute: .trailing, multiplier: 1.0, constant: 0.0)
         let trailingConstraint = NSLayoutConstraint(item: self.resultDetailContainerView, attribute: .trailing, relatedBy: .equal, toItem: self.searchResultContainer, attribute: .trailing, multiplier: 1.0, constant: 0.0)
         
+        self.resultDetailContainerLeadingConstraint = NSLayoutConstraint(item: self.resultDetailContainerView, attribute: .leading, relatedBy: .equal, toItem: self.resultListTableView, attribute: .trailing, multiplier: 1.0, constant: 0.0)
+        
         self.resultDetailContainerView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
+        NSLayoutConstraint.activate([topConstraint, bottomConstraint, trailingConstraint, self.resultDetailContainerLeadingConstraint])
     }
     
     // MARK: Update search result style based on horizontal size class
@@ -146,13 +156,15 @@ import UIKit
         DispatchQueue.main.async {
             if self.traitCollection.horizontalSizeClass == .compact {
                 self.resultDetailContainerView.isHidden = true
+                self.resultDetailContainerLeadingConstraint.constant = 0.0
                 self.resultList40PercentWidthConstraint.isActive = false
                 self.resultListFullWidthConstraint.isActive = true
             }
             else {
-                self.resultDetailContainerView.isHidden = false
                 self.resultListFullWidthConstraint.isActive = false
                 self.resultList40PercentWidthConstraint.isActive = true
+                self.resultDetailContainerLeadingConstraint.constant = self.verticalDividerWidth * 3
+                self.resultDetailContainerView.isHidden = false
             }
             self.layoutSubviews()
         }
