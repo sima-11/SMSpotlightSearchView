@@ -216,13 +216,13 @@ public typealias SMSpotlightSearchBarDidEndEditingReason = UITextFieldDidEndEdit
             context.setStrokeColor(self.colour.cgColor)
             context.setLineWidth(2.0)
             
+            // Draw circle
+            context.addEllipse(in: CGRect(x: circleCentre.x - radius, y: circleCentre.y - radius, width: radius*2, height: radius*2))
+            
             // Draw line
             context.move(to: iconCentre)
             context.addLine(to: CGPoint(x: size.width - margin, y: size.height - margin))
-            context.strokePath()
             
-            // Draw circle
-            context.addArc(center: circleCentre, radius: radius, startAngle: 0.0, endAngle: CGFloat.pi * 2, clockwise: true)
             context.strokePath()
             
             context.restoreGState()
